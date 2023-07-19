@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.7.0.slim.min.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css"> 
+    <title>Dice Game</title>
+</head>
+
+<body>  
+    <div class="wrapper">
+        <p>Author: Brian Wang, Franklin Wu</p>
+        <button id="instructions-button">Instructions</button>
+        <div id="instructions-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Instructions</h2>
+                <ol>
+                    <li>The game is played between a user and the computer. Each player rolls a pair of dice 3 times. After the third roll, the player with the highest score wins.</p>
+                    <li>The scoring works as follows:</p>
+                        <ul>
+                            <li>If any of the player's two dice comes up as a 1, then the score for that round for the player is 0. For example, if the player rolls a 6 and 1, they get a score of 0.</li>
+                            <li>If the player rolls a pair of the same numbers, then the player's score is the total of the two dice times 2. For example, if the player rolls 5 and 5, they get a score of (5+5)*2=20.</li>
+                            <li>If the player rolls any other combination of dice other than the ones mentioned above, then the player's score is the total value of the two dice. For example, if a player rolls a 3 and 2, the player gets a score of 3+2=5.
+                        </ul>
+                    <li>The game provides a text or graphical output showing the following:
+                        <ul>
+                        <li>The current rolled dice values for the player and the computer.</li>
+                        <li>The score for this round for the player and the computer.</li>
+                        <li>The accumulated total score for the player and computer.</li>
+                        </ul>
+                <li>The game provides a button that will do the following: roll a pair of dice for the player and another pair of dice for the computer, calculate the score for each of the players, then update the browser display to reflect the state of the game.</li>
+                <li>After three rolls of the dice, the game totals up the scores and displays a message showing who the winner was.</li>
+                <li>The game provides a button that will reset the game and start a new game.</li>
+            </ol>
+            </div>
+        </div>
+        <div id="game-board">
+            <h1>Dice Game</h1>
+            <div id="dice">
+                <div id="player-dice">
+                    <h2>Player Dice</h2>
+                    <img id="player-dice1" src="images/dice1.png">
+                    <img id="player-dice2" src="images/dice1.png">
+                </div>
+                <div id="computer-dice">
+                    <h2>Computer Dice</h2>
+                    <img id="computer-dice1" src="images/dice1.png">
+                    <img id="computer-dice2" src="images/dice1.png">
+                </div>
+            </div>
+
+            <div id="scores">
+                <h2>Scores</h2>
+                <p id="round">Round: 0</p>
+                <p id="player-score">Player Score: 0</p>
+                <p id="computer-score">Computer Score: 0</p>
+            </div>            
+            <div id="buttons">
+                <button id="roll-dice">Roll Dice</button>
+                <button id="reset-game">Restart Game</button>
+            </div>
+        </div>
+        <div id="winner-popup" class="hidden">
+            <div id="winner-message"></div>
+            <button id="close-popup">Close</button>
+        </div>
+    </div>
+</body>
+</html>
